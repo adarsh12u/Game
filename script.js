@@ -11,10 +11,16 @@ chance = 10;
 checkButton.addEventListener("click", () => {
   chance--;
   let inputValue = input.value;
+  if(checkButton.textContent =="Replay"){
+    window.location.reload();
+  }
   if (inputValue == randomNum) {
     [guess.textContent, input.disabled] = ["Congratulations", true];
     [checkButton.textContent, guess.style.color] = ["Replay", "#333"];
-  } else if (inputValue > randomNum && inputValue < 100) {
+
+  }
+ 
+  else if (inputValue > randomNum && inputValue < 100) {
     
     [guess.textContent, remainChances.textContent] = ["Your guess is high", chance];
     guess.style.color = "#333";
